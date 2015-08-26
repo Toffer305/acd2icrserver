@@ -1,0 +1,105 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ACD2ICR.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="DBName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">icresponse</Value>
+    </Setting>
+    <Setting Name="DBUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">rootalso</Value>
+    </Setting>
+    <Setting Name="DBPass" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">A9m1n</Value>
+    </Setting>
+    <Setting Name="ACDLoginUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://acd2.ststelecom.com/QueueManager/Login.php?ret_link=%2FQueueManager%2Fagent_ctl.php&amp;type=notLogged&amp;ccsForm=Login</Value>
+    </Setting>
+    <Setting Name="ACDOverViewUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://acd2.ststelecom.com/QueueManager/activity_monitor.php</Value>
+    </Setting>
+    <Setting Name="ACDGoBusy" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://acd2.ststelecom.com/QueueManager/ReadyBusy.php?paused=0</Value>
+    </Setting>
+    <Setting Name="ACDGoReady" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://acd2.ststelecom.com/QueueManager/ReadyBusy.php?paused=1</Value>
+    </Setting>
+    <Setting Name="DBInsertOverview" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">INSERT INTO acdoverview (name, date, phone, status,passed) VALUES (?name, ?date, ?phone, ?status, ?passed)</Value>
+    </Setting>
+    <Setting Name="DBInsertActiveCalls" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">INSERT INTO calls(uid, status, date, startTime, holdtime, duration, tech, queuename) VALUES (?uid, ?status, ?date, ?startTime, ?holdtime, ?duration, ?tech, ?queuename)</Value>
+    </Setting>
+    <Setting Name="VMLoginUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://vm.ststelecom.com/portal/</Value>
+    </Setting>
+    <Setting Name="VMVXView" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://vx2.voip.mia1.net.ststelecom.com:8082/VXView</Value>
+    </Setting>
+    <Setting Name="VMVXViewRoot" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://vx2.voip.mia1.net.ststelecom.com:8082/VXView/</Value>
+    </Setting>
+    <Setting Name="VMVXViewDo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://vx2.voip.mia1.net.ststelecom.com:8082/VXView/VXView.do</Value>
+    </Setting>
+    <Setting Name="VMVXViewLogin" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://vx2.voip.mia1.net.ststelecom.com:8082/VXView/login.do</Value>
+    </Setting>
+    <Setting Name="VMVXViewJSPTop" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://vx2.voip.mia1.net.ststelecom.com:8082/VXView/jsp/top.jsp</Value>
+    </Setting>
+    <Setting Name="VMVXViewJSPNav" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://vx2.voip.mia1.net.ststelecom.com:8082/VXView/jsp/navigation.jsp</Value>
+    </Setting>
+    <Setting Name="SMTPport" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">587</Value>
+    </Setting>
+    <Setting Name="SMTPhost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">smtp.gmail.com</Value>
+    </Setting>
+    <Setting Name="SMTPusername" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">icr.reports@gmail.com</Value>
+    </Setting>
+    <Setting Name="SMTPpassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Samurai8</Value>
+    </Setting>
+    <Setting Name="SMTPsubjectline" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ICRealtime Reports</Value>
+    </Setting>
+    <Setting Name="EMAILlistfilepath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\\ICRmonthlyReportsRecipients.txt</Value>
+    </Setting>
+    <Setting Name="EMAILmessageheader" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Call Center Report</Value>
+    </Setting>
+    <Setting Name="EMAILsendtime" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="DBGetAgentDailyStats" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SELECT tech,AVG(TIME_TO_SEC(TIMEDIFF(stopTime,startTime))) AS TechAverageDuration,COUNT(*) AS NumOfRows FROM calls WHERE date=CURDATE() GROUP BY tech</Value>
+    </Setting>
+    <Setting Name="DBGetMonthlyReport" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SELECT tech,AVG(TIME_TO_SEC(TIMEDIFF(stopTime,startTime))) AS TechAverageDuration,COUNT(*) AS NumOfRows FROM calls WHERE date BETWEEN DATE_SUB(CURDATE(),INTERVAL 30 DAY) AND CURDATE() GROUP BY tech</Value>
+    </Setting>
+    <Setting Name="ACDQueueLanding" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://acd2.ststelecom.com/QueueManager/queuecalls.php?s_call_date=&amp;s_end_date=&amp;s_unique_id=&amp;s_ani=&amp;s_abandoned=&amp;s_call_type=&amp;s_agent_name=&amp;s_queue_name=&amp;queue_callsOrder=&amp;queue_callsDir=&amp;queue_callsPageSize=100&amp;queue_callsPage=</Value>
+    </Setting>
+    <Setting Name="DBInsertCompletedCall" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">UPDATE calls SET status=?status,startTime = ?startTime, stopTime =?stopTime, holdtime=?holdtime, duration=?duration WHERE uid=?uid</Value>
+    </Setting>
+    <Setting Name="DBCheckUID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SELECT COUNT(*) AS NumOfRows FROM calls WHERE uid=</Value>
+    </Setting>
+    <Setting Name="DBGetCallRecordByUID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SELECT status, holdtime, duration FROM calls WHERE uid=</Value>
+    </Setting>
+    <Setting Name="DVCheck_OviewViewURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SELECT COUNT(*) AS NumOfRows FROM calls WHERE name=</Value>
+    </Setting>
+    <Setting Name="ACDTrunc" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TRUNCATE TABLE acdoverview</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
